@@ -25,11 +25,6 @@ public class AlumnoController {
         return ResponseEntity.ok(alumno);
     }
 
-    @GetMapping("/porid/{id}")
-    public List<String> getAlumnoPorNombre(@PathVariable("id") Integer id){
-        return alumnoService.getAlumno(id);
-    }
-
     @GetMapping("/pornom/{id}")
     public ResponseEntity<Alumno> buscarPorId(@PathVariable("id") Integer id) {
         Optional<Alumno> existeAlumno = alumnoRepository.getbyId(id);
