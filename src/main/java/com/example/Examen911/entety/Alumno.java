@@ -10,10 +10,6 @@ import java.util.List;
 @Table(name = "Alumnos")
 public class Alumno {
 
-    @OneToMany(cascade = {CascadeType.ALL})
-    @Column(name = "curso")
-    private List<Curso> cursoList;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -22,14 +18,6 @@ public class Alumno {
     private String direccion;
     private String correo;
 
-    public Alumno(List<Curso> cursoList, Integer id, String nombre, String apellido, String direccion, String correo) {
-        this.cursoList = cursoList;
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.direccion = direccion;
-        this.correo = correo;
-    }
 
     public Alumno() {
     }
@@ -40,14 +28,6 @@ public class Alumno {
         this.apellido = apellido;
         this.direccion = direccion;
         this.correo = correo;
-    }
-
-    public List<Curso> getCursoList() {
-        return cursoList;
-    }
-
-    public void setCursoList(List<Curso> cursoList) {
-        this.cursoList = cursoList;
     }
 
     public Alumno(String nombre) {
