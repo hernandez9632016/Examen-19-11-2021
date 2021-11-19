@@ -12,3 +12,4 @@ public interface AlumnoRepositoryDAO extends CrudRepository<Alumno,Integer> {
     @Query(value = "Select t.nombre, id, apellido, direccion from Alumno t where t.id=:id")
     public List<String> findAlumno(Integer id);
 }
+/*************************************************************/
